@@ -58,4 +58,5 @@ git push origin [nome da branch]
 ```
 
 [Guia prático de GIT](https://rogerdudler.github.io/git-guide/index.pt_BR.html)
+
 [Como criar um pull request](https://www.digitalocean.com/community/tutorials/como-criar-um-pull-request-no-github-pt)
