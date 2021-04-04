@@ -35,5 +35,27 @@ git checkout -b "fix/login_nomeCorrecao"
 ```
 Enviar as branchs com pull request
 
+Comandos úteis:
+- Puxar estado atual da branch no git:
+```
+git pull origin [nome da branch]
+```
+- Criar nova branch no git:
+```
+git checkout -b [nome da branch]
+```
+- Adicionar alterações:
+```
+git add .
+```
+- Salvar alterações:
+```
+git commit -m "[Descrição das alterações feitas]"
+```
+- Enviando branch para seu fork do repositório:
+```
+git push origin [nome da branch]
+```
+
 [Guia prático de GIT](https://rogerdudler.github.io/git-guide/index.pt_BR.html)
 [Como criar um pull request](https://www.digitalocean.com/community/tutorials/como-criar-um-pull-request-no-github-pt)
