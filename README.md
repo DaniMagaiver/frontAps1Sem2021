@@ -21,3 +21,19 @@ Veja as documentações das bibliotecas utilizadas aqui:
 Obs:
 - A porta do servidor mock (simulado) é **http://localhost:3001**
 - Para ver todos usuários  **http://localhost:3001/users**
+
+## Git
+Para manter a ordem no projeto, criar as funcionalidades e correções de bugs em
+branchs separadas. Ex.:
+Nova feature de login:
+```
+git checkout -b "feature/login" 
+```
+Correção de bug em login:
+```
+git checkout -b "fix/login_nomeCorrecao"
+```
+Enviar as branchs com pull request
+
+[Guia prático de GIT](https://rogerdudler.github.io/git-guide/index.pt_BR.html)
+[Como criar um pull request](https://www.digitalocean.com/community/tutorials/como-criar-um-pull-request-no-github-pt)
