@@ -33,6 +33,14 @@
             "scripts": []
           },
           "configurations": {
+            "develop":{
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -69,6 +77,9 @@
             "browserTarget": "frontAps1sem2021:build"
           },
           "configurations": {
+            "develop": {
+              "browserTarget": "frontAps1sem2021:build:develop"
+            },
             "production": {
               "browserTarget": "frontAps1sem2021:build:production"
             }

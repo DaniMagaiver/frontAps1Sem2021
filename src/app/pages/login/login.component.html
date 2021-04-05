@@ -1,0 +1,10 @@
+<div class="login">
+    <h2>Entrar</h2>
+    <form [formGroup]="formLogin" (submit)="login()">
+        <input formControlName="email" name="email" placeholder="Email ou nome de usuário" class="primary"  type="text">
+        <input formControlName="password" name="password" placeholder="Senha" class="primary" type="password">
+        <div class="line"></div>
+        <button type="submit">Entrar</button>
+        <div class="register">Ainda não tem uma conta? <a href="#">Clique aqui e registre-se</a></div>
+    </form>
+</div>

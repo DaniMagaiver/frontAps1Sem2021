@@ -1,0 +1,51 @@
+@import "src/styles.scss";
+.login {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  background-color: $background-color;
+  color: $secondary-color;
+  padding: 1rem;
+  height: 75vh;
+  border-radius: 12px;
+}
+button {
+  background-color: #0d3965;
+  width: 100%;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+input.primary {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  height: 3rem;
+  font-size: 1rem;
+  background-color: $background-color-light;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  color: #fff;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgba($color: #fff, $alpha: 0.25);
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  margin: 2rem 0;
+}
+
+.register {
+  font-size: 1rem;
+}
