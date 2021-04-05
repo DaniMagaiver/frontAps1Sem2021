@@ -1,16 +1,23 @@
-const casual = require("casual");
-const { User } = require("./models");
+const routes = require("./routes");
+const router = require("./data");
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const door = 3001;
 
-module.exports = () => {
-  const data = { users: [] };
-  for (let i = 0; i <= 10; i++) {
-    data.users.push(new User({
-        name: casual.full_name,
-        email: casual.email,
-        phone: casual.phone,
-        birthDay: casual.date(),
-        password: casual.password
-    }));
-  }
-  return data;
-};
+server.use(jsonServer.bodyParser);
+
+server.use((req, res, next) => {
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.set("Content-Type", "application/json");
+  res.set("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.set("Access-Control-Allow-Credentials", true);
+  next();
+});
+
+routes(server);
+
+server.use(router);
+
+server.listen(door, () => {
+  console.log(`O Servidor JSON está rodando na porta ${door} ! (～￣▽￣)～`);
+});

@@ -1,0 +1,23 @@
+$background-color: rgba(
+  $color: #000,
+  $alpha: 0.8,
+);
+$background-color-light: #333333;
+$primary-color: #0d3965;
+$secondary-color: #fff;
+$font-family: 'Roboto', sans-serif;
+$border-radius: 6px;
+
+p, span, div, button, h1, h2,h3, li{
+    font-family: $font-family;
+}
+
+h2{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+a:visited, a:link{
+    font-weight: 500;
+    color: #fff;
+}

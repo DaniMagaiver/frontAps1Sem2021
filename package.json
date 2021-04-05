@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "dev": "ng serve --configuration=develop",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api": "json-server --watch ./server/index.js --port 3001",
-    "all": "concurrently \"npm start\" \"npm run api\""
+    "api": "nodemon ./server/index.js",
+    "all": "concurrently \"npm run dev\" \"npm run api\""
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "json-server": "^0.16.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "nodemon": "^2.0.7",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
