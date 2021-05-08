@@ -8,6 +8,21 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
   padding: 0.6rem;
 
+  .user-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $max-height-bar;
+    max-height: $max-height-bar;
+    overflow: hidden;
+    border-radius: $max-height-bar;
+    margin-right: 1rem;
+    image {
+        width: $max-height-bar;
+        height: auto;
+    }
+  }
+
   .user-information {
     display: flex;
     flex-direction: column;
