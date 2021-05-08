@@ -2,9 +2,13 @@
     <h2>Entrar</h2>
     <form [formGroup]="formLogin" (submit)="login()">
         <input formControlName="email" name="email" placeholder="Email ou nome de usuário" class="primary"  type="text">
+        <div class="error" [hidden]="isValidEmail">Por favor, digite um email válido.</div>
         <input formControlName="password" name="password" placeholder="Senha" class="primary" type="password">
+        <div class="error" [hidden]="isValidPassword">Por favor, preencha o campo senha.</div>
         <div class="line"></div>
+        <!-- <button type="submit" [disabled]="formLogin.invalid">Entrar</button> -->
         <button type="submit">Entrar</button>
         <div class="register">Ainda não tem uma conta? <a href="#">Clique aqui e registre-se</a></div>
+        <div class="error message">{{loginError}}</div>
     </form>
 </div>

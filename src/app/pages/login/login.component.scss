@@ -7,16 +7,17 @@
   color: $secondary-color;
   padding: 1rem;
   height: 75vh;
-  border-radius: 12px;
+  border-radius: $page-border;
 }
 button {
-  background-color: #0d3965;
+  background-color: $primary-color;
   width: 100%;
   color: #fff;
   border: none;
   border-radius: $border-radius;
   font-size: 2rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 input.primary {
@@ -48,4 +49,8 @@ input:focus {
 
 .register {
   font-size: 1rem;
+}
+
+.message{
+  margin-top: 1rem;
 }

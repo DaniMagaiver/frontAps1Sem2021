@@ -1,0 +1,41 @@
+.chat{
+    height: 500px;
+    width: 800px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .talk{
+        border-radius: 5px;
+
+        width: max-content;
+        max-width: 80vh;
+
+        font-family: Roboto;
+        font-size: 18px;
+        display: flex;
+
+        padding: 1vh 1vh 1vh 2vh;
+
+       /* espaçamento entre todas as mensagens */
+        margin-bottom: 18px;
+
+        /* coisinha pro float dar certo */
+        clear: both;
+    }
+
+    .stranger{
+        background: #0D3965;
+        color:#fff;
+        
+        margin-left: 10vh;
+        float: left;
+    }
+
+    .me{
+        background-color: #C4C4C4;
+        color: #000;
+
+        margin-right: 10vh;
+        float: right;
+    }
+}

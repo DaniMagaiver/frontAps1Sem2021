@@ -1,0 +1,19 @@
+@import "src/styles.scss";
+.main-page {
+  max-width: 90vw;
+  max-height: 90vw;
+  background-color: $background-color-main;
+  display: flex;
+  flex-direction: column;
+  border-radius: $page-border;
+  position: relative;
+  img{
+      max-height: 500px;
+      width: auto;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: row;
+  }
+}

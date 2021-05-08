@@ -1,0 +1,21 @@
+@import "src/styles.scss";
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1rem;
+  width: 100%;
+  background-color: $background-color-dark;
+  border-radius: $page-border $page-border 0 0;
+
+  .search {
+    display: block;
+    background-color: $background-color-light;
+    color: #fff;
+    border-radius: $page-border;
+    border: none;
+    padding: 0.5rem;
+    font-size: 14px;
+    width: 16rem;
+  }
+}

@@ -1,6 +1,7 @@
 import { LoginService } from 'src/app/services/login.service';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +11,32 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent {
   constructor(
     private builder: FormBuilder,
-    private serviceLogin: LoginService
+    private serviceLogin: LoginService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
   formLogin = this.builder.group({
-    email: ['', Validators.required],
+    email: ['', [Validators.email, Validators.required]],
     password: ['', Validators.required],
   });
+  loginError = '';
 
   login(): void {
     const login = this.formLogin.value;
-    this.serviceLogin.login(login).subscribe(() => {
-      console.log(document.cookie)
-    });
+    // this.serviceLogin.login(login).subscribe(() => {
+    // }, ({error}) => {
+    //   this.loginError = error.message;
+    // });
+    this.router.navigate(['..', 'chat'], {relativeTo: this.route})
+  }
+
+  get isValidEmail(){
+    const fieldEmail = this.formLogin.controls['email'];
+    return fieldEmail.pristine || fieldEmail.valid;
+  }
+
+  get isValidPassword(){
+    const fieldPassword = this.formLogin.controls['password'];
+    return fieldPassword.pristine || fieldPassword.valid;
   }
 }

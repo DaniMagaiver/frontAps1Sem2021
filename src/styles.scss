@@ -7,10 +7,16 @@ $background-color: rgba(
   $alpha: 0.8,
 );
 $background-color-light: #333333;
+$background-color-medium: #C4C4C4;
+$background-color-dark: #000;
+$background-color-main: #E5E5E5;
 $primary-color: #0d3965;
+$primary-color-disabled: transparentize(#0d3965, .6%);
 $secondary-color: #fff;
 $font-family: 'Roboto', sans-serif;
 $border-radius: 6px;
+$page-border:16px;
+$max-height-bar: 40px;
 
 p, span, div, button, h1, h2,h3, li{
     font-family: $font-family;
@@ -25,6 +31,41 @@ a:visited, a:link{
     font-weight: 500;
     color: #fff;
 }
+
+div.error{
+    margin: .25rem 0;
+    font-size: .95rem;
+    color: #FF4444;
+}
+
+input.error{
+    border: 1px solid rgba($color: #FF4444, $alpha: 1);
+}
+
+button:disabled{
+    background-color: $primary-color-disabled;
+    color: transparentize(#fff, .6%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.user-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $max-height-bar;
+    max-width: $max-height-bar;
+    max-height: $max-height-bar;
+    overflow: hidden;
+    border-radius: $max-height-bar;
+    margin-right: 1rem;
+    image {
+        width: $max-height-bar;
+        height: auto;
+    }
+  }
 
 
 
