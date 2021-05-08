@@ -24,6 +24,13 @@ const routes: Routes = [
             (m) => m.MainPageModule
           ),
       },
+      {
+        path:'detalhes/:id',
+        loadChildren: () =>
+        import('./pages/main-page/main-page.module').then(
+          (m) => m.MainPageModule
+        ),
+      }
     ],
   },
 ];

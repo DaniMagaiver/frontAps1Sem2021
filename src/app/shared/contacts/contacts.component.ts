@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     templateUrl: './contacts.component.html',
@@ -7,4 +7,9 @@ import { Component } from "@angular/core";
 })
 export class ContactsComponent{
 
+    @Input() conversas;
+
+
+
+    
 }

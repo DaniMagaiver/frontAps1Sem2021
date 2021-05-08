@@ -1,3 +1,5 @@
 <div class="nav-bar">
-    <input class="search" type="text" name="" id="" placeholder="Pesquisar contato ou conversa">
+    <form [formGroup]="formularioCliente">
+        <input class="search" type="text" name="" id="" placeholder="Pesquisar contato ou conversa" formControlName="nome" >
+    </form>
 </div>
