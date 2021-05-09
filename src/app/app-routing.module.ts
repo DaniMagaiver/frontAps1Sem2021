@@ -1,6 +1,8 @@
 import { LayoutComponent } from './layout/layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DetalhesComponent } from './pages/detalhes/detalhes.component';
+import { DetalhesModule } from './pages/detalhes/detalhes.module';
 
 const routes: Routes = [
   {
@@ -25,10 +27,10 @@ const routes: Routes = [
           ),
       },
       {
-        path:'detalhes/:id',
+        path:'detalhes',
         loadChildren: () =>
-        import('./pages/main-page/main-page.module').then(
-          (m) => m.MainPageModule
+        import('./pages/detalhes/detalhes.module').then(
+          (m) => m.DetalhesModule
         ),
       }
     ],
