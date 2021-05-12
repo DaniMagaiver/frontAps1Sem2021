@@ -1,0 +1,15 @@
+.message-bar {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background: #c4c4c4;
+
+  input[type="text"] {
+    width: 95%;
+    border-radius: 3px;
+    padding: .5rem;
+    border: none;
+  }
+}

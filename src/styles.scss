@@ -47,6 +47,18 @@ button:disabled{
     color: transparentize(#fff, .6%);
 }
 
+.button-icon{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: $primary-color;
+    font-size: 1.4rem;
+
+    &:hover{
+        color: lighten($color: $primary-color, $amount: 10%);
+    }
+}
+
 *{
     box-sizing: border-box;
 }
