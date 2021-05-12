@@ -1,3 +1,5 @@
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { PresentContactBarComponent } from './chat/present-contact-bar/present-contact-bar.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './contacts/contact/contact.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -14,7 +16,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContactsComponent,
     ContactComponent,
     ChatComponent,
-    MessageBarComponent
+    MessageBarComponent,
+    PresentContactBarComponent, 
+    ContactInfoComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -27,7 +31,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContactsComponent,
     ContactComponent,
     ChatComponent,
-    MessageBarComponent
+    MessageBarComponent,
+    PresentContactBarComponent,
+    ContactInfoComponent
   ],
 })
 export class SharedModule {}

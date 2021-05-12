@@ -1,10 +1,14 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './chat.component.html',
-    styleUrls: ['./chat.component.scss'],
-    selector: 'app-chat'
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.scss'],
+  selector: 'app-chat',
 })
-export class ChatComponent{
+export class ChatComponent {
+  isContactInfo = true;
 
+  showContactInfo() {
+    this.isContactInfo = !this.isContactInfo;
+  }
 }

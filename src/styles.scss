@@ -1,5 +1,5 @@
-@import './reset.scss';
-@import './normalize.scss';
+@import "./reset.scss";
+@import "./normalize.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 $background-color: rgba(
@@ -7,79 +7,116 @@ $background-color: rgba(
   $alpha: 0.8,
 );
 $background-color-light: #333333;
-$background-color-medium: #C4C4C4;
+$background-color-medium: #c4c4c4;
 $background-color-dark: #000;
-$background-color-main: #E5E5E5;
+$background-color-main: #e5e5e5;
 $primary-color: #0d3965;
-$primary-color-disabled: transparentize(#0d3965, .6%);
+$primary-color-disabled: transparentize(#0d3965, 0.6%);
 $secondary-color: #fff;
-$font-family: 'Roboto', sans-serif;
+$font-family: "Roboto", sans-serif;
 $border-radius: 6px;
-$page-border:16px;
+$page-border: 16px;
 $max-height-bar: 40px;
+$green: #28a745;
+$green-dark: #007E33;
+$blue: #4285f4;
+$blue-dark: #0d47a1;
+$red: #ff4444;
+$red-dark: #CC0000;
+$yellow: #ffbb33;
+$yellow-dark: #ff8800;
 
-p, span, div, button, h1, h2,h3, li{
-    font-family: $font-family;
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+} 
+
+p,
+span,
+div,
+button,
+h1,
+h2,
+h3,
+li {
+  font-family: $font-family;
 }
 
-h2{
-    font-size: 32px;
-    font-weight: 400;
+h2 {
+  font-size: 32px;
+  font-weight: 400;
 }
 
-a:visited, a:link{
-    font-weight: 500;
-    color: #fff;
+a:visited,
+a:link {
+  font-weight: 500;
+  color: #fff;
 }
 
-div.error{
-    margin: .25rem 0;
-    font-size: .95rem;
-    color: #FF4444;
+div.error {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #ff4444;
 }
 
-input.error{
-    border: 1px solid rgba($color: #FF4444, $alpha: 1);
+input.error {
+  border: 1px solid rgba($color: #ff4444, $alpha: 1);
 }
 
-button:disabled{
-    background-color: $primary-color-disabled;
-    color: transparentize(#fff, .6%);
+button:disabled {
+  background-color: $primary-color-disabled;
+  color: transparentize(#fff, 0.6%);
 }
 
-.button-icon{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    color: $primary-color;
-    font-size: 1.4rem;
+.button-icon {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: $primary-color;
+  font-size: 1.4rem;
 
-    &:hover{
-        color: lighten($color: $primary-color, $amount: 10%);
-    }
+  &:hover {
+    color: lighten($color: $primary-color, $amount: 15%);
+  }
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 .user-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: $max-height-bar;
-    max-width: $max-height-bar;
-    max-height: $max-height-bar;
-    overflow: hidden;
-    border-radius: $max-height-bar;
-    margin-right: 1rem;
-    image {
-        width: $max-height-bar;
-        height: auto;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $max-height-bar;
+  max-width: $max-height-bar;
+  max-height: $max-height-bar;
+  overflow: hidden;
+  border-radius: $max-height-bar;
+  margin-right: 1rem;
+  image {
+    width: $max-height-bar;
+    height: auto;
   }
+}
 
+.shadow-1 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
+.shadow-3{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
 
+.shadow-4{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 
+.shadow-5{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

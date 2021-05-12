@@ -1,5 +1,8 @@
 <div class="nav-bar">
     <form [formGroup]="formularioCliente">
-        <input class="search" type="text" name="" id="" placeholder="Pesquisar contato ou conversa" formControlName="nome" >
+        <label for="txtSearch">
+            <fa-icon [icon]="icons.search" size="1x"></fa-icon>
+        </label>
+        <input class="search" type="text" name="txtSearch" id="txtSearch" placeholder="Pesquisar contato ou conversa" formControlName="nome" >
     </form>
 </div>

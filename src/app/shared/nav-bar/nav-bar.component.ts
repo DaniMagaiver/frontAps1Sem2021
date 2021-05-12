@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   templateUrl: './nav-bar.component.html',
@@ -14,6 +10,9 @@ import {
 export class NavBarComponent {
   @Output() contatoOuConversa = new EventEmitter();
   formularioCliente: FormGroup;
+  icons = {
+    search: faSearch,
+  };
 
   constructor(private formBuilder: FormBuilder) {}
 

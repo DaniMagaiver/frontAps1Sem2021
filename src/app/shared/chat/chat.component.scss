@@ -1,44 +1,71 @@
-.chat{
-    height: 500px;
-    width: 800px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 800px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-left: 1px solid rgba(0, 0, 0, 0.205);
 
-    .messages{
-        margin: 2rem 0;
-        .talk{
-            border-radius: 5px;
-    
-            width: max-content;
-            max-width: 80vh;
-    
-            font-family: Roboto;
-            font-size: 18px;
-            display: flex;
-    
-            padding: 1vh 1vh 1vh 2vh;
-    
-           /* espaçamento entre todas as mensagens */
-            margin-bottom: 18px;
-    
-            /* coisinha pro float dar certo */
-            clear: both;
-        }
-    
-        .stranger{
-            background: #0D3965;
-            color:#fff;
-            
-            margin-left: 10vh;
-            float: left;
-        }
-    
-        .me{
-            background-color: #C4C4C4;
-            color: #000;
-    
-            margin-right: 10vh;
-            float: right;
-        }
+  .present-contact {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .send-message {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .contact-info{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .messages {
+    width: 100%;
+    padding: 2rem 0 4rem 0;
+    .talk {
+      border-radius: 5px;
+
+      width: max-content;
+      max-width: 80vh;
+
+      font-family: Roboto;
+      font-size: 18px;
+      line-height: 1.5em;
+      display: flex;
+
+      padding: 1vh 1vh 1vh 2vh;
+
+      /* espaçamento entre todas as mensagens */
+      margin-bottom: 18px;
+
+      /* coisinha pro float dar certo */
+      clear: both;
     }
+
+    .stranger {
+      background: #0d3965;
+      color: #fff;
+
+      margin-left: 10vh;
+      float: left;
+    }
+
+    .me {
+      background-color: #c4c4c4;
+      color: #000;
+
+      margin-right: 10vh;
+      float: right;
+    }
+  }
 }

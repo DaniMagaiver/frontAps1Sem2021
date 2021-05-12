@@ -2,20 +2,38 @@
 .nav-bar {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
   padding: 1rem;
   width: 100%;
   background-color: $background-color-dark;
   border-radius: $page-border $page-border 0 0;
 
+  form {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
   .search {
     display: block;
     background-color: $background-color-light;
     color: #fff;
-    border-radius: $page-border;
+    border-radius: 0 $page-border $page-border 0;
     border: none;
     padding: 0.5rem;
+    line-height: 1.5rem;
     font-size: 14px;
     width: 16rem;
+  }
+
+  label {
+    color: #fff;
+    border-radius: $page-border 0 0 $page-border;
+    background-color: $background-color-light;
+    padding: 0.5rem;
+    font-size: 14px;
+    line-height: 1.5rem;
   }
 }

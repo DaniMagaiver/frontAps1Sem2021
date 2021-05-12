@@ -1,0 +1,44 @@
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .contact-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 1rem 0 1rem 0;
+    height: 50%;
+    .image-container {
+      border-radius: 100%;
+      overflow: hidden;
+      height: 32vh;
+      width: 32vh;
+      image {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  .user-informations {
+    display: block;
+    text-align: center;
+
+    .information-section {
+      margin-top: 16px;
+    }
+
+    .information-title {
+      font-size: 14px;
+    }
+
+    .information-section,
+    .information-title {
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  }
+}
