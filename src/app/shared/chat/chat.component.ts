@@ -23,7 +23,6 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit() {
-
     this.listenMessages();
   }
 
@@ -55,6 +54,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   listenMessages() {
     const subscription = this.service.listenMessages().subscribe((messages:any) => {
       this.messages = messages.messages;
+      console.log(messages)
     });
 
     this.subscriptions.add(subscription);
