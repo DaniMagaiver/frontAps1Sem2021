@@ -23,10 +23,10 @@ export class LoginComponent {
 
   login(): void {
     const login = this.formLogin.value;
-    this.serviceLogin.login(login).subscribe((res:any)=>{
-      localStorage.setItem('userId',JSON.stringify(res.id))
-    });
+    this.serviceLogin.login(login).subscribe(async (res:any)=>{
+     await localStorage.setItem('userId',JSON.stringify(res.id))
     this.router.navigate(['..', 'chat'], {relativeTo: this.route})
+    });
   }
 
   get isValidEmail(){

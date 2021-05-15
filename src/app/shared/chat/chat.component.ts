@@ -11,7 +11,7 @@ import { ChatService } from 'src/app/services/chat.service';
 
 export class ChatComponent implements OnInit, OnDestroy {
   @Input() selectedContact;
-  userPrimary = "0a013599-3425-4daa-85ba-3af09b09e2ce"
+  userPrimary = JSON.parse(localStorage.getItem('userId'))
   isContactInfo = true;
   subscriptions = new Subscription();
 
