@@ -1,27 +1,53 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 <div class="contact-info">
   <div class="contact-image">
     <div class="image-container">
-      <img src="https://picsum.photos/300/300" alt="" />
+      <img src="../../../assets/user.png" alt="" />
     </div>
   </div>
-  <div class="user-informations">
+  <div class="element user-informations">
     <div class="information-section">
       Informações do usuário
     </div>
-    <div class="information-title">
-      Informações para contato
-      <div>Nome Completo: {{currentContact.user_name || '-'}}</div>
-      <div>Email: {{currentContact.user_email || '-'}}</div>
-      <div>Celular: {{currentContact.user_phone || '-'}}</div>
-    </div>
-    <div class="information-title">
-      Informações de cargo
-      <div>Empresa: {{currentContact.user_company || '-'}}</div>
-      <div>Cargo: {{currentContact.user_occupation || '-'}}</div>
-    </div>
-    <div class="information-title">
-      Recado padrão
-      <div>"{{currentContact.user_standardScrap || '-'}}"</div>
+    <div class="element-wrapper">
+      <div class="element-key">
+        Nome Completo
+      </div>
+      <div class="element-value">
+        {{currentContact.user_name || '-'}}
+      </div>
+      <div class="element-key">
+        Email
+      </div>
+      <div class="element-value">
+        {{currentContact.user_email || '-'}}
+      </div>
+      <div class="element-key">
+        Celular
+      </div>
+      <div class="element-value">
+        {{currentContact.user_phone || '-'}}
+      </div>
+      <div class="element-key">
+        Empresa
+      </div>
+      <div class="element-value">
+        {{currentContact.user_company || '-'}}
+      </div>
+      <div class="element-key">
+        Cargo
+      </div>
+      <div class="element-value">
+        {{currentContact.user_occupation || '-'}}
+      </div>
+      
+      <div class="element-key">
+        Status
+      </div>
+      <div class="element-value">
+        {{currentContact.user_standardScrap || '-'}}
+      </div>
     </div>
   </div>
 </div>

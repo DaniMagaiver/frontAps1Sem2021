@@ -24,9 +24,10 @@
     overflow: hidden;
     border-radius: $max-height-bar;
     margin-right: 1rem;
-    image {
-      width: $max-height-bar;
-      height: auto;
+    img {
+      border-radius: 50%;
+      max-height: 40px;
+      background: white;
     }
   }
 

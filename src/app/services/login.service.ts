@@ -21,6 +21,6 @@ export class LoginService {
   }
 
   getUser(){
-    return this.http.get(`${baseUrl}/users/77151b16-3264-4546-912d-2a8d79679d9b`);
+    return this.http.get(`${baseUrl}/users/0a013599-3425-4daa-85ba-3af09b09e2ce`);
   }
 }

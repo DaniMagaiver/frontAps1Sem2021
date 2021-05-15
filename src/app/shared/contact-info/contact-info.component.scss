@@ -1,3 +1,4 @@
+@import "../../../styles.scss";
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -13,11 +14,15 @@
     .image-container {
       border-radius: 100%;
       overflow: hidden;
-      height: 32vh;
-      width: 32vh;
+      height: 12rem;
+      width: 12rem;
       image {
         height: 100%;
         width: auto;
+      }
+      img{
+        margin-left: 40px;
+        margin-top:20px;
       }
     }
   }
@@ -36,9 +41,33 @@
 
     .information-section,
     .information-title {
-      text-transform: uppercase;
-      font-weight: 700;
+      font:30px $font-key ;
       margin-bottom: 1rem;
+    }
+  }
+  .element{
+    &-wrapper{
+      display: grid;
+      grid-template-columns: 10rem 15rem;
+      grid-column-gap: 1px;
+      margin-left: 15rem;
+    }
+    div:not(:first-child){
+      // max-width: 30px;
+      
+    }
+    &-key{
+      font-family: $font-key;
+      text-align: left;
+      margin-top:10px;
+      padding-bottom:20px;
+    }
+    &-value{
+      font-family: $font-value;
+      font-weight: bold;
+      margin-top:10px;
+      text-align:left;
+      padding-bottom:20px;
     }
   }
 }

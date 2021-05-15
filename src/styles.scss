@@ -13,7 +13,6 @@ $background-color-main: #e5e5e5;
 $primary-color: #0d3965;
 $primary-color-disabled: transparentize(#0d3965, 0.6%);
 $secondary-color: #fff;
-$font-family: "Roboto", sans-serif;
 $border-radius: 6px;
 $page-border: 16px;
 $max-height-bar: 40px;
@@ -25,6 +24,8 @@ $red: #ff4444;
 $red-dark: #CC0000;
 $yellow: #ffbb33;
 $yellow-dark: #ff8800;
+$font-key:'Red Hat Display', sans-serif;;
+$font-value: 'Montserrat', sans-serif;
 
 textarea:focus, input:focus, select:focus {
   box-shadow: 0 0 0 0;
@@ -40,7 +41,8 @@ h1,
 h2,
 h3,
 li {
-  font-family: $font-family;
+  font-family: $font-key;
+  font-size: 15px;
 }
 
 h2 {

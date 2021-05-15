@@ -10,13 +10,15 @@ export class ChatService {
   socket = io('http://localhost:3000').connect();
   constructor(private http: HttpClient) {}
 
-  getUserContacts(userId: string = '77151b16-3264-4546-912d-2a8d79679d9b') {
+  getUserContacts(userId: string = '0a013599-3425-4daa-85ba-3af09b09e2ce') {
     return this.http.get(
-      `${base_url}talks/77151b16-3264-4546-912d-2a8d79679d9b`
+      `${base_url}talks/0a013599-3425-4daa-85ba-3af09b09e2ce`
     );
   }
 
   sendMessage(message: string) {
     this.socket.emit('message',message);
   }
+
+  //Pegar dados Io
 }
