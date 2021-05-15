@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { ChatService } from "src/app/services/chat.service";
 
 @Component({
     templateUrl: './contact.component.html',
@@ -8,8 +9,15 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export class ContactComponent{
     @Input() contact
     @Output() clickEvent = new EventEmitter();
+    constructor(private service:ChatService){
 
+    }
+    ngOnInit(){
+     
+    }
     clicked(){
+        console.log("Contact",this.contact)
+        localStorage.setItem('talk_id',JSON.stringify(this.contact.talks_id))
         this.clickEvent.emit(this.contact);
     }
 }

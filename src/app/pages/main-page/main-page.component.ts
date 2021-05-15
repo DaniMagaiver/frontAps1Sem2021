@@ -31,22 +31,27 @@ export class MainPageComponent {
   }
 
   getUser() {
-    this.loginService
-      .getUser()
-      .pipe(
-        switchMap((user: any) => {
-          this.user = user;
-          return this.chatService.getUserContacts(user.id);
-        })
-      )
-      .subscribe((contacts) => {
-        this.contacts = contacts;
-      });
+    // this.loginService
+    //   .getUser()
+    //   .pipe(
+    //     switchMap((user: any) => {
+    //       this.user = user;
+    //       return this.chatService.getUserContacts(user.id);
+    //     })
+    //   )
+    //   .subscribe((contacts) => {
+    //     console.log("Contatcs",contacts);
+    //     this.contacts = contacts;
+    //   });
   }
 
   getConversas(): void {}
 
-  getContacts(): void {}
+  getContacts(): void {
+    this.chatService.getUserContacts().subscribe((contacts) => {
+      this.contacts = contacts;
+    })
+  }
 
 
   selectContact(contact){

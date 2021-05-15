@@ -3,21 +3,14 @@
     <app-present-contact-bar *ngIf="selectedContact" [currentContact]="selectedContact" (clicked)="showContactInfo()"></app-present-contact-bar>
   </div>
   <div class="messages" *ngIf="!isContactInfo && selectedContact">
-    <div class="talk stranger">Thank you! That was very helpful!</div>
 
-    <div class="talk stranger">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
+    <div *ngFor="let message of messages" >
+      <div [ngClass]="{'talk stranger': userPrimary !== message.user.id, 'talk me':userPrimary == message.user.id}">
+        <div>
+          {{message.message}}
+        </div>
+      </div>
     </div>
-
-    <div class="talk me">TRISTE NÉ? KKKKK</div>
   </div>
   <div class="send-message" *ngIf="!isContactInfo && selectedContact">
     <app-message-bar></app-message-bar>

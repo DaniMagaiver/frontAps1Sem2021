@@ -1,15 +1,42 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
   selector: 'app-chat',
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit{
+  id:string;
+  messages = [];
+  constructor(private service:ChatService){
+    
+  }
+  ngOnInit(){
+    
+  }
   @Input() selectedContact;
+  userPrimary = "0a013599-3425-4daa-85ba-3af09b09e2ce"
   isContactInfo = true;
 
   showContactInfo() {
     this.isContactInfo = !this.isContactInfo;
+    if(!this.isContactInfo){
+      this.id = JSON.parse(localStorage.getItem('talk_id'))
+      this.getMessages();
+    }
   }
+
+  getMessages(){
+    this.service.getUserMessages(this.id).subscribe((res:any)=>{
+      this.messages =res.messages;
+      console.log("Messages",this.messages);
+    })
+    //d620d2c9-47ea-4ddb-b02b-d71d5b190536
+    //0a013599-3425-4daa-85ba-3af09b09e2ce -- Diego
+    //5894b9c5-0056-4cda-a427-24f2d226c430 -- Diegod
+    // ad6fa9e4-a801-4b90-8b80-07c5eabf8308 -- Danilo
+  }
+  
+
 }
