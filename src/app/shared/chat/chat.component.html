@@ -1,13 +1,17 @@
-<div class="chat" >
+<div class="chat">
   <div class="present-contact" *ngIf="selectedContact">
-    <app-present-contact-bar *ngIf="selectedContact" [currentContact]="selectedContact" (clicked)="showContactInfo()"></app-present-contact-bar>
+    <app-present-contact-bar
+      *ngIf="selectedContact"
+      [currentContact]="selectedContact"
+      (clicked)="showContactInfo()"
+    ></app-present-contact-bar>
   </div>
   <div class="messages" *ngIf="!isContactInfo && selectedContact">
 
     <div class="grid" >
       <div [ngClass]="{'talk stranger': userPrimary != message.user.id, 'talk me':userPrimary == message.user.id}" *ngFor="let message of messages">
         <div>
-          {{message.message}}
+          {{ message.message }}
         </div>
       </div>
     </div>
