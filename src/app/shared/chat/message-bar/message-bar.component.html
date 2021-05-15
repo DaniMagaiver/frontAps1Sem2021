@@ -1,6 +1,6 @@
 <div class="message-bar soft-shadow">
-  <input type="text" name="" id="txtMessage">
-  <button class="button-icon">
+  <input [(ngModel)]="message" type="text" name="" id="txtMessage">
+  <button (click)="send()" class="button-icon">
     <fa-icon [icon]="icons.send"></fa-icon>
   </button>
 </div>

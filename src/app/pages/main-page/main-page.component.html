@@ -4,10 +4,10 @@
     </div>
     <div class="content">
         <div class="contacts">
-            <app-contacts [conversas]="conversas"></app-contacts>
+            <app-contacts [contacts]="contacts" (eventClick)="selectContact($event)"></app-contacts>
         </div>
         <div class="chat">
-            <app-chat></app-chat>
+            <app-chat [selectedContact]="selectedContact"></app-chat>
         </div>
     </div>
 </div>

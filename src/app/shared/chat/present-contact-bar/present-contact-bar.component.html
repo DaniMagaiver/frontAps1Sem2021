@@ -3,7 +3,7 @@
         <img src="https://picsum.photos/50/50" alt="">
     </div>
    <div class="user-information" (click)="emitEvent()">
-       <div class="user-name">James</div>
+       <div class="user-name">{{currentContact.user_name}}</div>
        <div class="status">
           <fa-icon [icon]="icons.circle"></fa-icon> Online
        </div>

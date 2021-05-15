@@ -1,8 +1,8 @@
-<div class="chat">
-  <div class="present-contact">
-    <app-present-contact-bar (clicked)="showContactInfo()"></app-present-contact-bar>
+<div class="chat" >
+  <div class="present-contact" *ngIf="selectedContact">
+    <app-present-contact-bar *ngIf="selectedContact" [currentContact]="selectedContact" (clicked)="showContactInfo()"></app-present-contact-bar>
   </div>
-  <div class="messages" *ngIf="!isContactInfo">
+  <div class="messages" *ngIf="!isContactInfo && selectedContact">
     <div class="talk stranger">Thank you! That was very helpful!</div>
 
     <div class="talk stranger">
@@ -19,10 +19,10 @@
 
     <div class="talk me">TRISTE NÉ? KKKKK</div>
   </div>
-  <div class="send-message" *ngIf="!isContactInfo">
+  <div class="send-message" *ngIf="!isContactInfo && selectedContact">
     <app-message-bar></app-message-bar>
   </div>
-  <div class="contact-info" *ngIf="isContactInfo">
-    <app-contact-info></app-contact-info>
+  <div class="contact-info" *ngIf="isContactInfo && selectedContact">
+    <app-contact-info [currentContact]="selectedContact"></app-contact-info>
   </div>
 </div>

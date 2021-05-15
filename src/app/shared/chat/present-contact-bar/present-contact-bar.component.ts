@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,6 +8,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class PresentContactBarComponent {
   @Output() clicked = new EventEmitter();
+  @Input() currentContact;
   icons = {
     circle: faCircle,
   };

@@ -7,19 +7,21 @@
   <div class="user-informations">
     <div class="information-section">
       Informações do usuário
-      <div>-</div>
     </div>
     <div class="information-title">
       Informações para contato
-      <div>-</div>
+      <div>Nome Completo: {{currentContact.user_name || '-'}}</div>
+      <div>Email: {{currentContact.user_email || '-'}}</div>
+      <div>Celular: {{currentContact.user_phone || '-'}}</div>
     </div>
     <div class="information-title">
       Informações de cargo
-      <div>-</div>
+      <div>Empresa: {{currentContact.user_company || '-'}}</div>
+      <div>Cargo: {{currentContact.user_occupation || '-'}}</div>
     </div>
     <div class="information-title">
       Recado padrão
-      <div>-</div>
+      <div>"{{currentContact.user_standardScrap || '-'}}"</div>
     </div>
   </div>
 </div>

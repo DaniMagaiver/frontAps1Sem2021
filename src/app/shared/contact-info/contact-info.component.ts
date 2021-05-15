@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     templateUrl: './contact-info.component.html',
@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     selector: 'app-contact-info'
 })
 export class ContactInfoComponent{
-    
+    @Input() currentContact;
 }

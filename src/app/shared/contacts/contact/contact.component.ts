@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
     templateUrl: './contact.component.html',
@@ -6,5 +6,10 @@ import { Component } from "@angular/core";
     selector: 'app-contact'
 })
 export class ContactComponent{
+    @Input() contact
+    @Output() clickEvent = new EventEmitter();
 
+    clicked(){
+        this.clickEvent.emit(this.contact);
+    }
 }

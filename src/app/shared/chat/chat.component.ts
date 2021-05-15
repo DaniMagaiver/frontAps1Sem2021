@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   templateUrl: './chat.component.html',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   selector: 'app-chat',
 })
 export class ChatComponent {
+  @Input() selectedContact;
   isContactInfo = true;
 
   showContactInfo() {
