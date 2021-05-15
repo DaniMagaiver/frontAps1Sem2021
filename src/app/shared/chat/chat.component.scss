@@ -23,18 +23,19 @@
     width: 100%;
   }
 
-  .contact-info{
+  .contact-info {
     display: block;
     height: 100%;
     width: 100%;
   }
 
   .messages {
+    min-height: 100%;
     width: 100%;
     padding: 2rem 0 4rem 0;
     .talk {
       border-radius: 5px;
- 
+
       width: max-content;
       max-width: 80vh;
 
@@ -58,16 +59,12 @@
 
       margin-left: 10vh;
       float: left;
-      min-width: 5rem;
-      min-height: 2rem;
-      margin-top: 20px;
-      div{
+      div {
         margin-left: 10px;
         margin-top: 5px;
       }
-     
     }
-    .stranger:last-child{
+    .stranger:last-child {
       margin-top: 5rem;
     }
 
@@ -80,4 +77,3 @@
     }
   }
 }
-

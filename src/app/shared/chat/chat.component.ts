@@ -21,7 +21,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   constructor(
     private service: ChatService,
     private serviceLogin: LoginService,
-    private serviceChat: ChatService,
+    private serviceChat: ChatService
   ) {}
 
   ngOnInit() {
@@ -32,12 +32,15 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  ngOnChanges(): void {
+    this.id = this.serviceChat.getTalkId();
+    this.getMessages();
+  }
+
   showContactInfo() {
     this.isContactInfo = !this.isContactInfo;
     if (!this.isContactInfo) {
-      this.id = this.serviceChat.getTalkId()
       // this.id = JSON.parse(localStorage.getItem('talk_id'));
-      this.getMessages();
     }
     console.log('SELECTED', this.selectedContact);
   }

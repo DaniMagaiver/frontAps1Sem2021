@@ -24,7 +24,6 @@ export class MainPageComponent {
   selectedContact;
 
   ngOnInit() {
-    this.getUser();
     this.getContacts();
     this.getConversas();
   }
@@ -32,26 +31,10 @@ export class MainPageComponent {
     this.valorDigitado = valorDigitado;
   }
 
-  getUser() {
-    // this.loginService
-    //   .getUser()
-    //   .pipe(
-    //     switchMap((user: any) => {
-    //       this.user = user;
-    //       return this.chatService.getUserContacts(user.id);
-    //     })
-    //   )
-    //   .subscribe((contacts) => {
-    //     console.log("Contatcs",contacts);
-    //     this.contacts = contacts;
-    //   });
-  }
-
   getConversas(): void {}
 
   getContacts(): void {
     this.chatService.getUserContacts(this.userId).subscribe((contacts) => {
-      console.log("Contatos",contacts)
       this.contacts = contacts;
     })
   }

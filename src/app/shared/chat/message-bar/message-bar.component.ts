@@ -33,7 +33,6 @@ export class MessageBarComponent {
 
   listenMessages() {
     this.chatService.listenMessages().subscribe((talk) => {
-      console.log(talk);
     });
   }
 }
