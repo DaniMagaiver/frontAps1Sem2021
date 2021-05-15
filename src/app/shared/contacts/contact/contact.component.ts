@@ -16,7 +16,8 @@ export class ContactComponent{
      
     }
     clicked(){
-        localStorage.setItem('talk_id',JSON.stringify(this.contact.talks_id))
+        // localStorage.setItem('talk_id',JSON.stringify(this.contact.talks_id))
+        this.service.setTalkId(this.contact.talks_id);
         this.clickEvent.emit(this.contact);
     }
 }

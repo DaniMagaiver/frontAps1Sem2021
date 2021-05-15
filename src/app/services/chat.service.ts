@@ -8,19 +8,17 @@ const base_url = 'http://localhost:3000/';
   providedIn: 'root',
 })
 export class ChatService {
+  private talkId = '';
   socket = io('http://localhost:3000').connect();
   constructor(private http: HttpClient) {}
 
   getUserContacts(userId: string) {
-    return this.http.get(
-      `${base_url}talks/findUserTalk/${userId}`
-    );
+    return this.http.get(`${base_url}talks/findUserTalk/${userId}`);
   }
 
   getUserMessages(talkId: string) {
     return this.http.get(`${base_url}talks/${talkId}`);
   }
-
 
   sendMessage({
     senderId,
@@ -31,7 +29,7 @@ export class ChatService {
     destinataryId: string;
     message: string;
   }) {
-    this.socket.emit('newMessage', {senderId, destinataryId, message});
+    this.socket.emit('newMessage', { senderId, destinataryId, message });
   }
 
   listenMessages() {
@@ -42,4 +40,12 @@ export class ChatService {
     return messageListener$;
   }
   //Pegar dados Io
+
+  setTalkId(talkId: string) {
+    this.talkId = talkId;
+  }
+
+  getTalkId() {
+    return this.talkId;
+  }
 }

@@ -5,7 +5,7 @@
   <div class="messages" *ngIf="!isContactInfo && selectedContact">
 
     <div  >
-      <div [ngClass]="{'talk stranger': userPrimary !== message.user.id, 'talk me':userPrimary == message.user.id}" *ngFor="let message of messages">
+      <div [ngClass]="{'talk stranger': userPrimary != message.user.id, 'talk me':userPrimary == message.user.id}" *ngFor="let message of messages">
         <div>
           {{message.message}}
         </div>

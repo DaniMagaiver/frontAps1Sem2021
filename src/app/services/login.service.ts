@@ -9,6 +9,7 @@ const baseUrl = 'http://localhost:3000'
 })
 export class LoginService {
   baseUrl = environment.base_url;
+  private conectedUser = '';
   constructor(private http: HttpClient) {}
 
   login({ email, password }) {
@@ -20,5 +21,13 @@ export class LoginService {
 
   getUser(){
     return this.http.get(`${baseUrl}/users/0a013599-3425-4daa-85ba-3af09b09e2ce`);
+  }
+
+  setSelectedUser(userId:string){
+    this.conectedUser = userId;
+  }
+
+  getSelectedUser():string{
+    return this.conectedUser;
   }
 }

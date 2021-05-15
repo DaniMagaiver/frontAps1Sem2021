@@ -24,7 +24,8 @@ export class LoginComponent {
   login(): void {
     const login = this.formLogin.value;
     this.serviceLogin.login(login).subscribe(({id}:any)=>{
-      localStorage.setItem('userId',JSON.stringify(id))
+      // localStorage.setItem('userId',JSON.stringify(id))
+      this.serviceLogin.setSelectedUser(id);
       this.router.navigate(['..', 'chat'], {relativeTo: this.route})
     });
   }

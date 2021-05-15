@@ -12,7 +12,8 @@ export class MainPageComponent {
   conversas = [];
   conversasFiltradas = [];
   valorDigitado: string;
-  userId = localStorage.getItem('userId');
+  // userId = localStorage.getItem('userId');
+  userId = this.loginService.getSelectedUser();
   constructor(
     private service: MainService,
     private loginService: LoginService,
@@ -49,7 +50,7 @@ export class MainPageComponent {
   getConversas(): void {}
 
   getContacts(): void {
-    this.chatService.getUserContacts(JSON.parse(this.userId)).subscribe((contacts) => {
+    this.chatService.getUserContacts(this.userId).subscribe((contacts) => {
       console.log("Contatos",contacts)
       this.contacts = contacts;
     })
