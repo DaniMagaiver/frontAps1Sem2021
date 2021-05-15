@@ -11,9 +11,9 @@ export class ChatService {
   socket = io('http://localhost:3000').connect();
   constructor(private http: HttpClient) {}
 
-  getUserContacts(userId: string = '0a013599-3425-4daa-85ba-3af09b09e2ce') {
+  getUserContacts(userId: string) {
     return this.http.get(
-      `${base_url}talks/findUserTalk/0a013599-3425-4daa-85ba-3af09b09e2ce`
+      `${base_url}talks/findUserTalk/${userId}`
     );
   }
 

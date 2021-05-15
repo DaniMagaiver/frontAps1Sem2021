@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit() {
+
     this.listenMessages();
   }
 
@@ -36,6 +37,7 @@ export class ChatComponent implements OnInit, OnDestroy {
       this.id = JSON.parse(localStorage.getItem('talk_id'))
       this.getMessages();
     }
+    console.log("SELECTED",this.selectedContact)
   }
 
   getMessages(){

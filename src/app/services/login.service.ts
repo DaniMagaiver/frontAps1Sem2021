@@ -14,7 +14,7 @@ export class LoginService {
   login({ email, password }) {
     return this.http
       .get(
-        `localhost:3000/users/findByEmail/${email}`,
+        `http://localhost:3000/users/findByEmail/${email}`,
       );
   }
 

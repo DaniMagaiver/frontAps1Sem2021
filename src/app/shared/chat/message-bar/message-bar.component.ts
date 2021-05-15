@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { ChatService } from 'src/app/services/chat.service';
@@ -9,6 +9,7 @@ import { ChatService } from 'src/app/services/chat.service';
   selector: 'app-message-bar',
 })
 export class MessageBarComponent {
+  @Input()selectedContact;
   message:string = '';
   constructor(private chatService:ChatService){}
   icons = {
@@ -16,7 +17,7 @@ export class MessageBarComponent {
   };
 
   send(){
-   this.chatService.sendMessage({senderId: '0a013599-3425-4daa-85ba-3af09b09e2ce', destinataryId:'d620d2c9-47ea-4ddb-b02b-d71d5b190536', message: this.message});
+   this.chatService.sendMessage({senderId: JSON.parse(localStorage.getItem('userId')), destinataryId:this.selectedContact.user_id, message: this.message});
    this.message = '';
   }
 

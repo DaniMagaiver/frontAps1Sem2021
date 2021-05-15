@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="send-message" *ngIf="!isContactInfo && selectedContact">
-    <app-message-bar></app-message-bar>
+    <app-message-bar [selectedContact]="selectedContact"></app-message-bar>
   </div>
   <div class="contact-info" *ngIf="isContactInfo && selectedContact">
     <app-contact-info [currentContact]="selectedContact"></app-contact-info>
