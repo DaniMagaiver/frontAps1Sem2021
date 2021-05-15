@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
@@ -6,18 +7,28 @@ import { ChatService } from 'src/app/services/chat.service';
   styleUrls: ['./chat.component.scss'],
   selector: 'app-chat',
 })
-export class ChatComponent implements OnInit{
+
+
+export class ChatComponent implements OnInit, OnDestroy {
+  @Input() selectedContact;
+  userPrimary = "0a013599-3425-4daa-85ba-3af09b09e2ce"
+  isContactInfo = true;
+  subscriptions = new Subscription();
+
+  
   id:string;
   messages = [];
   constructor(private service:ChatService){
     
   }
-  ngOnInit(){
-    
+  
+  ngOnInit() {
+    this.listenMessages();
   }
-  @Input() selectedContact;
-  userPrimary = "0a013599-3425-4daa-85ba-3af09b09e2ce"
-  isContactInfo = true;
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 
   showContactInfo() {
     this.isContactInfo = !this.isContactInfo;
@@ -39,4 +50,11 @@ export class ChatComponent implements OnInit{
   }
   
 
+  listenMessages() {
+    const subscription = this.service.listenMessages().subscribe((messages:any) => {
+      this.messages = messages.messages;
+    });
+
+    this.subscriptions.add(subscription);
+  }
 }

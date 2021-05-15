@@ -16,7 +16,13 @@ export class MessageBarComponent {
   };
 
   send(){
-   this.chatService.sendMessage(this.message);
+   this.chatService.sendMessage({senderId: '0a013599-3425-4daa-85ba-3af09b09e2ce', destinataryId:'d620d2c9-47ea-4ddb-b02b-d71d5b190536', message: this.message});
    this.message = '';
+  }
+
+  listenMessages(){
+    this.chatService.listenMessages().subscribe(talk => {
+      console.log(talk)
+    })
   }
 }

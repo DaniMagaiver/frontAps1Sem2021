@@ -23,10 +23,9 @@ export class LoginComponent {
 
   login(): void {
     const login = this.formLogin.value;
-    // this.serviceLogin.login(login).subscribe(() => {
-    // }, ({error}) => {
-    //   this.loginError = error.message;
-    // });
+    this.serviceLogin.login(login).subscribe((res)=>{
+      console.log("Res",res)
+    });
     this.router.navigate(['..', 'chat'], {relativeTo: this.route})
   }
 

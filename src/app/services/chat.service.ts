@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { io } from 'socket.io-client';
 
 const base_url = 'http://localhost:3000/';
@@ -21,20 +21,25 @@ export class ChatService {
     return this.http.get(`${base_url}talks/${talkId}`);
   }
 
-  sendMessage(message: string) {
-    this.socket.emit('message', message);
+
+  sendMessage({
+    senderId,
+    destinataryId,
+    message,
+  }: {
+    senderId: string;
+    destinataryId: string;
+    message: string;
+  }) {
+    this.socket.emit('newMessage', {senderId, destinataryId, message});
   }
 
-  listenMessages(eventName: string) {
-    return new Observable((subscriber) => {
-      this.socket.on(eventName, (data) => {
-        subscriber.next(data);
-      });
+  listenMessages() {
+    const messageListener$ = new Subject();
+    this.socket.on('updatedMessages', (talk) => {
+      messageListener$.next(talk);
     });
-  }
-
-  emit(eventName: string, data: any) {
-    this.socket.emit(eventName, data);
+    return messageListener$;
   }
   //Pegar dados Io
 }

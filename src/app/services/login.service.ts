@@ -13,10 +13,8 @@ export class LoginService {
 
   login({ email, password }) {
     return this.http
-      .post(
-        `${this.baseUrl}/users/login`,
-        { email, password },
-        { observe: 'response', withCredentials: true}
+      .get(
+        `localhost:3000/users/findByEmail/${email}`,
       );
   }
 
